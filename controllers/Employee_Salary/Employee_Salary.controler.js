@@ -8,10 +8,10 @@ const { customerLogger, ErrorLogger } = require("../../utils/logger");
 module.exports.createEmployeeSalary = async (req, res) => {
     try {
         // destructuring the request body
-        let { Employee_Name, Monthly_Salary, Employee_Id } = req.body;
+        let { Employee_Name, Monthly_Salary } = req.body;
         console.log('insertSalary', req.body)
 
-        console.log('employeeSalaryInfo', Employee_Name, Monthly_Salary, Employee_Id)
+        // console.log('employeeSalaryInfo', Employee_Name, Monthly_Salary, Employee_Id)
         // const { id } = req.params;
         //Send 12 months short name in database
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novembar", "December"];
@@ -45,17 +45,21 @@ module.exports.createEmployeeSalary = async (req, res) => {
 
 
         // create a new employee salary record
-        const employeeSalary = await Employee_Salary.create({
-            Employee_Name,
-            Salary_Month: month,
-            // subtract the total deductions from the monthly salary to get the net salary
-            Monthly_Salary,
-            // Monthly_Salary: Monthly_Salary,
-
-        });
+        const employeeSalary = await Employee_Salary.create(req.body);
+        // const employeeSalary = await Employee_Salary.create({
+        //     Employee_Name,
+        //     Salary_Month: month,
+        //     // subtract the total deductions from the monthly salary to get the net salary
+        //     Monthly_Salary,
+        //     // Monthly_Salary: Monthly_Salary,
+        //     // Employee_Id
+        // });
 
         // return the newly created employee salary record
-        res.status(200).send(employeeSalary);
+        res.status(200).send({
+            Status: 'Success',
+            data: employeeSalary
+        });
     } catch (error) {
         // return an error 
         res.status(500).send(error);
@@ -174,5 +178,27 @@ module.exports.deleteSearchEmployeeSalary = async (req, res) => {
             error: error.message,
         });
         ErrorLogger.error(req.originalUrl + " " + error.message);
+    }
+};
+
+//  All employee salary information here
+module.exports.getAllEmployeesalary = async (req, res) => {
+    try {
+        const result = await Employee_Salary.findAll();
+        if (!result) {
+            return res.send("Result not found");
+        }
+        res.status(200).send({
+            status: "Success",
+            message: "All employee salary information",
+            data: result,
+        });
+    } catch (error) {
+        res.status(400).send({
+            status: "fail",
+            message: "Employee salary information not found",
+            error: error.message,
+        });
+        ErrorLogger.error("getAllEmployeesalary" + " " + error.message);
     }
 };

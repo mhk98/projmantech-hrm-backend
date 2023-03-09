@@ -468,3 +468,55 @@
 {"level":"error","message":"/api/v1/categories/ notNull Violation: categories.Category_Id cannot be null","timestamp":"2023-03-06T05:06:56.255Z"}
 {"level":"error","message":"/api/v1/categories/ categories.create is not a function","timestamp":"2023-03-06T11:53:15.649Z"}
 {"level":"error","message":"/api/v1/categories/ categories.create is not a function","timestamp":"2023-03-06T11:53:23.409Z"}
+{"level":"error","message":"/api/v1/profile_information/1 Too many connections","timestamp":"2023-03-09T07:52:51.537Z"}
+{"level":"error","message":"/api/v1/profile_information/2 Too many connections","timestamp":"2023-03-09T07:52:51.561Z"}
+{"level":"error","message":"/api/v1/salary Too many connections","timestamp":"2023-03-09T07:52:51.599Z"}
+{"level":"error","message":"ProjectCount Too many connections","timestamp":"2023-03-09T07:52:51.703Z"}
+{"level":"error","message":"clientCount Too many connections","timestamp":"2023-03-09T07:52:51.721Z"}
+{"level":"error","message":"/api/v1/profile_information/2 Too many connections","timestamp":"2023-03-09T07:53:16.806Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:10:15.776Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:11:42.719Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:13:12.587Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:12.600Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:15.116Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:16.651Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:17.361Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:17.691Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:43.708Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:44.355Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:44.557Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:44.772Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:45.147Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:45.384Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:45.595Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:45.840Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:46.070Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:46.274Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:46.617Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:47.048Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:14:47.529Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:15:07.308Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:15:07.994Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:15:08.222Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:15:08.454Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:15:08.757Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:15:08.957Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:15:09.158Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:15:09.705Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:15:10.011Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:15:10.243Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:15:10.766Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:15:11.368Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:15:11.790Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:15:49.595Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:16:43.378Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:17:04.669Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:18:45.669Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:19:29.477Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:19:31.030Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:20:00.014Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:20:16.792Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:20:40.795Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:20:41.595Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:20:41.779Z"}
+{"level":"error","message":"createEmployeeSalary Employee_Id is not defined","timestamp":"2023-03-09T08:20:41.985Z"}

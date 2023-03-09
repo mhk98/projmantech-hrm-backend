@@ -22,10 +22,10 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
 
-      Employee_Id: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
+      // Employee_Id: {
+      //   type: DataTypes.STRING,
+      //   allowNull: true,
+      // },
 
     },
     {

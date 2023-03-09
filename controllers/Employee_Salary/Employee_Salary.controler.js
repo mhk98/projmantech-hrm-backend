@@ -51,7 +51,7 @@ module.exports.createEmployeeSalary = async (req, res) => {
             // subtract the total deductions from the monthly salary to get the net salary
             Monthly_Salary,
             // Monthly_Salary: Monthly_Salary,
-            Employee_Id
+
         });
 
         // return the newly created employee salary record

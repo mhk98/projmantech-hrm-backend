@@ -21,10 +21,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: true,
       },
-      Employee_Id: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
+      // Employee_Id: {
+      //   type: DataTypes.STRING,
+      //   allowNull: true,
+      // },
       Employee_Name: {
         type: DataTypes.STRING,
         allowNull: true,

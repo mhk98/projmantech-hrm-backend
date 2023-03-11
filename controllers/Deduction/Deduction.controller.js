@@ -9,7 +9,7 @@ const { customerLogger, ErrorLogger } = require("../../utils/logger");
 
 module.exports.createDeduction = async (req, res) => {
   try {
-    let { Deduction_Reason, Unit_Amount, Employee_Id, Deduction_Month, Employee_Name } = req.body;
+    let { Deduction_Reason, Unit_Amount, Deduction_Month, Employee_Name } = req.body;
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novembar", "December"];
     let monthIndex = (new Date().getMonth());
 
@@ -23,7 +23,6 @@ module.exports.createDeduction = async (req, res) => {
       Deduction_Reason,
       Unit_Amount,
       Deduction_Month,
-      Employee_Id,
       Employee_Name
     });
 
@@ -33,7 +32,7 @@ module.exports.createDeduction = async (req, res) => {
     // find all deductions for the employee
     const deductions = await Deduction.findAll({
       where: {
-        Employee_Id: Employee_Id,
+        Employee_Name: Employee_Name,
         Deduction_Month: Deduction_Month
       }
 
@@ -54,19 +53,19 @@ module.exports.createDeduction = async (req, res) => {
 
     const employeeMonthlySalary = await Employee_Salary.findOne({
       where: {
-        Employee_Id: Employee_Id,
+        Employee_Name: Employee_Name,
         Salary_Month: Deduction_Month
       }
     })
 
     let data = {
-      Employee_Name: Employee_Name, Monthly_Salary: employeeMonthlySalary.Monthly_Salary - totalDeduction, Employee_Id: Employee_Id
+      Employee_Name: Employee_Name, Monthly_Salary: employeeMonthlySalary.Monthly_Salary - totalDeduction
     }
     // create a new employee salary record
     const employeeSalary = await Employee_Salary.update(data, {
 
       where: {
-        Employee_Id: Employee_Id,
+        Employee_Name: Employee_Name,
         Salary_Month: Deduction_Month
       }
     });
@@ -86,8 +85,8 @@ module.exports.createDeduction = async (req, res) => {
 module.exports.getDeductionInvidual = async (req, res) => {
   console.log("getDeduction");
   try {
-    const { Employee_Id } = req.params;
-    const deduction = await Deduction.findAll({ where: { Employee_Id: Employee_Id } });
+    const { Employee_Name } = req.params;
+    const deduction = await Deduction.findAll({ where: { Employee_Name: Employee_Name } });
     return res.status(200).send(deduction);
   } catch (error) {
     ErrorLogger.error(req.originalUrl + " " + error.message);

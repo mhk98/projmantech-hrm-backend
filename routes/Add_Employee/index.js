@@ -7,10 +7,10 @@ const { verifyToken } = require("../../utils/verifyToken");
 
 // router.post("/", upload.single("Img"), Add_Employee.add_employee);
 router.post("/", upload, Add_Employee.add_employee);
-router.put("/:id", upload, Add_Employee.updateEmployeeInformation);
-router.delete("/:id", Add_Employee.deleteEmployeeInformation);
-router.get("/", Add_Employee.getAllEmployee);
-router.get("/:id", Add_Employee.SingleEmployeeInformation);
+router.put("/:id", verifyToken, upload, Add_Employee.updateEmployeeInformation);
+router.delete("/:id", verifyToken, Add_Employee.deleteEmployeeInformation);
+router.get("/", verifyToken, Add_Employee.getAllEmployee);
+router.get("/:id", verifyToken, Add_Employee.SingleEmployeeInformation);
 router.post("/count", verifyToken, Add_Employee.EmployeeCount);
 
 module.exports = router;

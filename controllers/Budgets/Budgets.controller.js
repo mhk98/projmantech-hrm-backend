@@ -7,8 +7,8 @@ const budgets = db.Budgets;
 module.exports.insertBudgets = async (req, res) => {
 
     try {
-        const budgets = req.body;
-        const result = await budgets.create(budgets)
+        const data = req.body;
+        const result = await budgets.create(data)
         if (!result) {
             return res.send('Result not found')
 
@@ -57,10 +57,10 @@ module.exports.getAllBudgets = async (req, res) => {
 
 
 //Budget information delete
-module.exports.delete_Budget= async (req, res) => {
+module.exports.delete_Budget = async (req, res) => {
     try {
         const { id } = req.params;
-       // const { educationId } = req.params;
+        // const { educationId } = req.params;
         console.log('Budget Id here', id)
 
         if (!id) {

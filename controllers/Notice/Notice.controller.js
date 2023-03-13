@@ -6,22 +6,12 @@ const Notice = db.Notice;
 
 module.exports.createNotice = async (req, res) => {
   try {
-    const { notice_text, is_for_all, notice_date, employee_id } = req.body;
-    if (!is_for_all) {
-      const employee = await Add_Employee.findOne({
-        where: { Employee_Id: employee_id }
-      });
-      if (!employee) {
-        return res.status(404).send("Employee not found");
-      }
+
+    if (!req.body) {
+      return res.status(404).send("Notice info not found");
     }
-    const notice = await Notice.create({
-      notice_text,
-      is_for_all,
-      notice_date,
-      employee_id
-    });
-    res.status(201).send(notice);
+    const notice = await Notice.create(req.body);
+    res.status(200).send(notice);
   } catch (error) {
     res.status(500).send(error);
   }
@@ -29,8 +19,15 @@ module.exports.createNotice = async (req, res) => {
 
 module.exports.getNotices = async (req, res) => {
   try {
-    const notices = await Notice.findAll();
-    res.status(200).send(notices);
+    const result = await Notice.findAll();
+    if (!result) {
+      return res.status(404).send('result not found')
+    }
+    res.status(200).send({
+      status: 'Success',
+      message: 'Successfully got notice info',
+      data: result
+    })
   } catch (error) {
     res.status(500).send(error);
   }
@@ -51,15 +48,20 @@ module.exports.getNoticeById = async (req, res) => {
 
 module.exports.updateNotice = async (req, res) => {
   try {
-    const { notice_id } = req.params;
-    const [updated] = await Notice.update(req.body, {
-      where: { notice_id }
+    const { id } = req.params;
+    const result = await Notice.update(req.body, {
+      where: { notice_id: id }
     });
-    if (updated) {
-      const updatedNotice = await Notice.findByPk(notice_id);
-      return res.status(200).send(updatedNotice);
+
+    if (!result) {
+      return res.status(404).send('Result not found')
     }
-    throw new Error("Notice not found");
+    res.status(200).send({
+      status: 'Success',
+      message: 'Successfully update notice info',
+      data: result
+    })
+
   } catch (error) {
     res.status(500).send(error);
   }
@@ -67,14 +69,15 @@ module.exports.updateNotice = async (req, res) => {
 
 module.exports.deleteNotice = async (req, res) => {
   try {
-    const { notice_id } = req.params;
+    const { id } = req.params;
+    console.log('NoticeId', id);
     const deleted = await Notice.destroy({
-      where: { notice_id }
+      where: { notice_id: id }
     });
     if (deleted) {
-      return res.status(204).send();
+      return res.status(200).send('Successfully delete notice');
     }
-    throw new Error("Notice not found");
+
   } catch (error) {
     res.status(500).send(error);
   }

@@ -75,7 +75,7 @@ router.use("/budget_revenue", Budget_Revenue);
 router.use("/emergency_contact", Family_Information);
 router.use("/attendance", Attendance);
 router.use("/pmt_projects", Projects);
-router.use("/Notice", Notice);
+router.use("/notice", Notice);
 router.use("/Leaves", Leaves);
 router.use("/Task", Task);
 router.use("/Promotion", Promotion);

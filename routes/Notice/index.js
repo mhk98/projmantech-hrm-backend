@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const noticeController = require("../../controllers/Notice/Notice.controller");
 
-router.post("/createNotice", noticeController.createNotice);
+router.post("/", noticeController.createNotice);
 //for getting all notices
-router.get("/getNotice", noticeController.getNotices);
+router.get("/", noticeController.getNotices);
 //for getting invidual notice
-router.get("/:notice_id", noticeController.getNoticeById);
-router.put("/:notice_id", noticeController.updateNotice);
-router.delete("/:notice_id", noticeController.deleteNotice);
+// router.get("/:notice_id", noticeController.getNoticeById);
+router.put("/:id", noticeController.updateNotice);
+router.delete("/:id", noticeController.deleteNotice);
 
 module.exports = router;

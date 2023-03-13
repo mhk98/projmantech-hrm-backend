@@ -7,22 +7,19 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         autoIncrement: true
       },
-      notice_text: {
+      notice_title: {
         type: DataTypes.STRING,
+        allowNull: true
+      },
+      notice_description: {
+        type: DataTypes.TEXT('long'),
         allowNull: true
       },
       notice_date: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: true
       },
-      is_for_all: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: true
-      },
-      Assigned_to: {
-        type: DataTypes.STRING,
-        allowNull: true
-      }
+
     });
 
   return Notice;

@@ -5,7 +5,7 @@ const db = require("../db/db");
 const { DataTypes } = require("sequelize");
 
 db.sequelize
-  .sync({ force: true })
+  .sync({ force: false })
   .then(() => {
     console.log("Connection re-synced");
   })

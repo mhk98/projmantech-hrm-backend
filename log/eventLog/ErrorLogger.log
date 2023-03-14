@@ -528,3 +528,5 @@
 {"level":"error","message":"/api/v1/profile_information/2 Access denied for user 'sql12602750'@'61.247.187.246' (using password: YES)","timestamp":"2023-03-11T04:51:05.321Z"}
 {"level":"error","message":"/api/v1/profile_information/2 Access denied for user 'sql12602750'@'61.247.187.246' (using password: YES)","timestamp":"2023-03-11T04:51:05.482Z"}
 {"level":"error","message":"/api/v1/user/signup notNull Violation: usertbls.User_Name cannot be null","timestamp":"2023-03-11T05:01:04.250Z"}
+{"level":"error","message":"add_employee create Incorrect integer value: 'e2' for column 'User_ID' at row 1","timestamp":"2023-03-14T09:23:19.042Z"}
+{"level":"error","message":"add_employee create Incorrect integer value: 'e3' for column 'User_ID' at row 1","timestamp":"2023-03-14T09:35:47.865Z"}

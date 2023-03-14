@@ -6,10 +6,9 @@ module.exports = (sequelize, DataTypes, Sequelize) => {
     "usertbls",
     {
       User_ID: {
-        type: DataTypes.INTEGER(10),
+        type: DataTypes.STRING(10),
         primaryKey: true,
-        autoIncrement: true,
-        allowNull: true,
+        allowNull: false,
       },
 
       User_Name: {

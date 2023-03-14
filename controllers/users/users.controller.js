@@ -158,3 +158,29 @@ exports.login = async (req, res, next) => {
     // });
   }
 };
+
+
+// User role information update
+module.exports.update_user = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.send('Id not found')
+    }
+    const result = await User.update(req.body, { where: { User_Id: id } })
+    if (!result) {
+      return res.send('Result not found')
+    }
+    res.status(200).send({
+      status: "Success",
+      message: "Successfully Payment update",
+      data: result
+    })
+  } catch (error) {
+    res.status(400).send({
+      status: "fail",
+      message: "No Payment_BankInfo found",
+      error: error.message
+    })
+  }
+}

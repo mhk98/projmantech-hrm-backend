@@ -615,16 +615,8 @@ async function holidaynaki(thisdate) {
 async function holidayChecker(dates) {
 
     for (let i = 0; i < dates.length; i++) {
-
-
-
-
         try {
-
             // console.log("Function call-------------------",getDaybyname(dates[i]));
-
-
-
             getDaybyname(dates[i])
                 .then((result) => {
                     console.log('result', result)
@@ -640,8 +632,6 @@ async function holidayChecker(dates) {
                     else {
                         console.log("$$$");
                     }
-
-
                 })
 
             holidaynaki(dates[i])
@@ -656,18 +646,13 @@ async function holidayChecker(dates) {
                     else {
                         console.log("$$$");
                     }
-
                 })
-
-
             console.log("After deduction", dates);
 
         } catch (error) {
             console.log(error.message);
 
         }
-
-
     }
 
     //console.log("After deduction",dates);

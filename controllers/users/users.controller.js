@@ -162,6 +162,7 @@ exports.login = async (req, res, next) => {
 
 // User role information update
 module.exports.update_user = async (req, res) => {
+  console.log('update_user', req.body);
   try {
     const { id } = req.params;
     if (!id) {
@@ -173,13 +174,13 @@ module.exports.update_user = async (req, res) => {
     }
     res.status(200).send({
       status: "Success",
-      message: "Successfully Payment update",
+      message: "Successfully role update",
       data: result
     })
   } catch (error) {
     res.status(400).send({
       status: "fail",
-      message: "No Payment_BankInfo found",
+      message: "Not update role",
       error: error.message
     })
   }

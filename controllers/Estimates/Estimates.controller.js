@@ -76,7 +76,7 @@ module.exports.deleteEstimates = async (req, res) => {
 
         }
         const delitem = await Items.destroy({
-            where: { Estimate_Id: id }
+            where: { estimateEstimateId: id }
         })
         res.status(200).send({
             status: "Success",

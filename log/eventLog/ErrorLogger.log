@@ -560,3 +560,21 @@
 {"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-21T05:09:54.423Z"}
 {"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-21T05:10:23.919Z"}
 {"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-21T05:21:20.138Z"}
+{"level":"error","message":"/api/v1/profile_information/2 Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:27:24.421Z"}
+{"level":"error","message":"/api/v1/profile_information/2 Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:27:24.425Z"}
+{"level":"error","message":"/api/v1/profile_information/2 Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:27:24.427Z"}
+{"level":"error","message":"/api/v1/profile_information/2 Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:27:24.429Z"}
+{"level":"error","message":"/api/v1/profile_information/2 Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:27:24.513Z"}
+{"level":"error","message":"ProjectCount Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:27:24.517Z"}
+{"level":"error","message":"clientCount Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:27:24.518Z"}
+{"level":"error","message":"/api/v1/profile_information/null Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:27:54.111Z"}
+{"level":"error","message":"/api/v1/profile_information/null Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:27:54.132Z"}
+{"level":"error","message":"/api/v1/profile_information/null Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:27:54.158Z"}
+{"level":"error","message":"/api/v1/profile_information/null Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:27:54.177Z"}
+{"level":"error","message":"Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:28:06.555Z"}
+{"level":"error","message":"Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:28:13.931Z"}
+{"level":"error","message":"Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:28:40.955Z"}
+{"level":"error","message":"Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:28:55.606Z"}
+{"level":"error","message":"Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:29:42.087Z"}
+{"level":"error","message":"Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:30:03.642Z"}
+{"level":"error","message":"Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:30:23.482Z"}

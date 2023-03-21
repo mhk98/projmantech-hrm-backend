@@ -1,7 +1,8 @@
 const db = require("../../db/db");
-const Items = require("../../models/Items/Items");
+// const Items = require("../../models/Items/Items");
 const Invoices = db.Invoices;
 const Payment = db.Payments
+const Items = db.Items;
 
 
 // insert invoices informatio using post request
@@ -149,7 +150,10 @@ module.exports.deleteInvoices = async (req, res) => {
     try {
         const invoices = req.body;
         const { id } = req.params;
-        // console.log('invoices', invoices)
+        console.log('invoicesId', id)
+        const delitem = await Items.destroy({
+            where: { invoiceInvoiceId: id }
+        })
         const result = await Invoices.destroy({
             where: { Invoice_Id: id }
         })
@@ -157,9 +161,7 @@ module.exports.deleteInvoices = async (req, res) => {
             return res.send('Result not found')
 
         }
-        const delitem = await Items.destroy({
-            where: { Invoice_Id: id }
-        })
+
         res.status(200).send({
             status: "Success",
             message: "Successfully Invoices information delete",

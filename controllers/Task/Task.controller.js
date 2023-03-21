@@ -8,7 +8,7 @@ const Add_Employee = db.Add_Employee;
 const { customerLogger, ErrorLogger } = require("../../utils/logger");
 module.exports = {
   async createTask(req, res) {
-    console.log("createTask");
+    // console.log("createTask");
     try {
       const {
         Task,
@@ -19,7 +19,7 @@ module.exports = {
         Assigned_to,
         projectProjectId,
       } = req.body;
-      console.log("taskInfo", req.body);
+      // console.log("taskInfo", req.body);
       const employee = await Employees.findOne({
         where: { Employee_Id: Assigned_to },
       });
@@ -60,7 +60,7 @@ module.exports = {
     }
   },
   async updateTask(req, res) {
-    console.log("updateTask");
+    // console.log("updateTask");
     try {
       const { Task_Id } = req.params;
       const [updated] = await Tasks.update(req.body, { where: { Task_Id } });
@@ -86,7 +86,7 @@ module.exports = {
     }
   },
   async updateTaskStatus(req, res) {
-    console.log("updateTaskStatus");
+    // console.log("updateTaskStatus");
     try {
       const { Employee_Id, Project_Id } = req.params;
       const { Status } = req.body;
@@ -125,7 +125,7 @@ module.exports.getTasksInvidual = async (req, res) => {
 module.exports.getProject = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log("Project_Id", id);
+    // console.log("Project_Id", id);
     const tasks = await Tasks.findAll({ where: { projectProjectId: id } });
     return res.status(200).send(tasks);
   } catch (error) {
@@ -136,7 +136,7 @@ module.exports.getProject = async (req, res) => {
 //for report of task
 module.exports.allTasks = async (req, res) => {
   try {
-    console.log("dhukse naki?");
+    // console.log("dhukse naki?");
     const task = await sequelize.query(
       "select t.*, a.Employee_FirstName ,a.Employee_LastName  from tasks t , add_employees a where t.Assigned_to = a.Employee_Id ;",
       {
@@ -239,7 +239,7 @@ module.exports.individualCompleteTask = async (req, res) => {
 module.exports.TaskCount = async (req, res) => {
   try {
     const taskCount = await Tasks.count().then((task) => {
-      console.log("Tasks", task);
+      // console.log("Tasks", task);
       // if (!task) {
       //     return res.status(404).send('Taskcount not found')
       // }

@@ -13,7 +13,7 @@ const { customerLogger, ErrorLogger } = require("../../utils/logger");
 module.exports.add_employee = async (req, res, file) => {
   try {
     const employee = req.body;
-    console.log("ImagePath", req.file);
+    // console.log("ImagePath", req.file);
     const {
       Employee_Id,
       Employee_FirstName,
@@ -43,7 +43,7 @@ module.exports.add_employee = async (req, res, file) => {
       Img: req.file.path,
     });
 
-    console.log("ImagePathInfo", req.file);
+    // console.log("ImagePathInfo", req.file);
     // const result = await Add_Employee.create(employee);
     //Insert Employee_Id in Personal_Information table
     const personalInfoInsert = await Personal_Information.create({
@@ -84,8 +84,10 @@ module.exports.add_employee = async (req, res, file) => {
       User_Name: Employee_FirstName,
       pass_word: Password,
       User_Email: Email,
-      role: 'user'
+      role: "user",
     });
+
+    console.log("User", newuser);
 
     res.status(200).send({
       status: "Success",
@@ -195,9 +197,14 @@ module.exports.updateEmployeeInformation = async (req, res) => {
 module.exports.deleteEmployeeInformation = async (req, res) => {
   try {
     const { id } = req.params;
+
+    const deleteUser = await User.destroy({
+      where: { User_ID: id },
+    });
     const result = await Add_Employee.destroy({
       where: { Employee_Id: id },
     });
+
     res.status(200).send({
       status: "Success",
       message: "Successfully delete employee information",
@@ -246,7 +253,7 @@ module.exports.SingleEmployeeInformation = async (req, res) => {
 module.exports.EmployeeCount = async (req, res) => {
   try {
     const employeeCount = await Add_Employee.count().then((employee) => {
-      console.log("employee", employee);
+      // console.log("employee", employee);
 
       if (!employee) {
         return res.status(404).send("Employeecount not found");

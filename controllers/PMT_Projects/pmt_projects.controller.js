@@ -116,7 +116,7 @@ module.exports.projectsDelete = async (req, res) => {
 //get all projects here
 module.exports.getAllProjects = async (req, res) => {
     try {
-        console.log("Clients all")
+        // console.log("Clients all")
         const result = await sequelize.query("select p.*, c.Client_FirstName, c.Client_LastName  from projects p, clients c where p.clientClientId =c.Client_Id ;", {
             type: sequelize.QueryTypes.SELECT
           })
@@ -181,7 +181,7 @@ module.exports.searchingClientProject = async (req, res) => {
 
     try {
         const { id } = req.params;
-        console.log("Client ID ", id);
+        // console.log("Client ID ", id);
         if (!id) {
             return res.status(400).send('Id not found')
 
@@ -191,7 +191,7 @@ module.exports.searchingClientProject = async (req, res) => {
             where: { clientClientId: id }
         })
 
-        console.log("the projects of clients", result);
+        // console.log("the projects of clients", result);
 
         res.status(200).send({
             status: "Success",
@@ -215,7 +215,7 @@ module.exports.projectCount = async (req, res) => {
     try {
 
         const projectCount = await Projects.count().then((project) => {
-            console.log('Tasks', project)
+            // console.log('Tasks', project)
 
             if (!project) {
                 return res.status(404).send('Projectcount not found')

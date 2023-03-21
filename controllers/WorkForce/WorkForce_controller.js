@@ -1,30 +1,42 @@
 const db = require("../../models");
 const sequelize = db.sequelize;
 const WorkForce = db.WorkForce;
-const Project =  db.Project;
+const Project = db.Project;
 const Add_Employee = db.Add_Employee;
 
 
 //WorkForce information insert using post request operation
 module.exports.WorkForceInsert = async (req, res) => {
     try {
-      const workForc = req.body;
-      const result = await WorkForce.create(workForc);
-      if (!result) {
-        return res.status(400).send("WorkForce information not found");
-      }
-      res.status(200).send({
-        status: "Success",
-        message: "Successfully WorkForce information insert",
-      });
+        const { Project_Id, Employee_Id } = req.body;
+        // console.log("Dakhte chai Project_Id", Project_Id);
+        // console.log("Dakhte chai Employee_Id", Employee_Id);
+        for (let i = 0; i < Employee_Id.length; i++) {
+            let a = {
+                Employee_Id: Employee_Id[i],
+                Project_Id: Project_Id
+            }
+            const result = await WorkForce.create(a);
+        }
+        //   Employee_Id.forEach(element => {
+        //     const result = WorkForce.create(Project_Id,element);
+        //     //console.log("Result",result)
+        //   });
+        //const result = await WorkForce.create();
+
+        res.status(200).send({
+            status: "Success",
+            message: "Successfully WorkForce information insert",
+        });
     } catch (error) {
-      res.status(400).send({
-        status: "Fail",
-        message: "couldn't find WorkForce information",
-        error: error.message,
-      });
+        res.status(400).send({
+            status: "Fail",
+            message: "couldn't find WorkForce information",
+            error: error.message,
+        });
     }
-  };
+};
+
 //WorkForce information update using post request operation
 
 module.exports.WorkForceUpdate = async (req, res) => {
@@ -121,19 +133,19 @@ module.exports.getAllWorkForce = async (req, res) => {
 //get project based WorkForce here
 module.exports.getProjectEmployee = async (req, res) => {
 
-    const {Project_Id} = req.params;
+    const { Project_Id } = req.params;
 
 
     try {
-        
+
 
         const result = await sequelize.query("select a.Employee_FirstName ,a.Employee_LastName, a.Designation ,a.Img, w.Employee_Id, w.WF_Id  from add_employees a join workforces w on a.Employee_Id = w.Employee_Id where w.Project_Id = ?;", {
             replacements: [Project_Id],
             type: sequelize.QueryTypes.SELECT
-          })
+        })
 
 
-        console.log("ki re vai", result);
+        // console.log("ki re vai", result);
         if (!result) {
             return res.send('Result not found')
         }
@@ -160,18 +172,18 @@ module.exports.getEmployeeProject = async (req, res) => {
 
 
     try {
-        const {id} = req.params;
-        
+        const { id } = req.params;
+
 
         const result = await sequelize.query("SELECT * FROM projects p JOIN workforces w ON w.Project_Id = p.Project_Id WHERE w.Employee_Id = ?", {
             replacements: [id],
             type: sequelize.QueryTypes.SELECT
-          })
-            
-        console.log('RRRRR',result);
-        
+        })
+
+        // console.log('RRRRR', result);
+
         if (!result) {
-            res.status(400).send({ 
+            res.status(400).send({
                 status: "Fail",
                 message: "Result not found",
 

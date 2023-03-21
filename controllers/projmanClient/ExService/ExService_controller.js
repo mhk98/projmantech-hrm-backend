@@ -96,7 +96,7 @@ module.exports.getOneExService = async (req, res) => {
     try {
 
         const { id } = req.params;
-        console.log(" title ", id);
+        // console.log(" title ", id);
         const result = await ExService.findAll({ where: { Content_Id: id } });
 
         if (!result) {
@@ -124,7 +124,7 @@ module.exports.delete_ExService = async (req, res) => {
     try {
         const { id } = req.params;
         // const { educationId } = req.params;
-        console.log('ExService Id here', id)
+        // console.log('ExService Id here', id)
 
         const isthere = await ExService.findAll({ where: { Content_Id: id } });
 
@@ -134,7 +134,7 @@ module.exports.delete_ExService = async (req, res) => {
         }
         const result = await ExService.destroy({ where: { Content_Id: id } })
 
-        console.log("ExService_information_update", req.body)
+        // console.log("ExService_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

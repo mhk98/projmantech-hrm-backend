@@ -61,7 +61,7 @@ module.exports.delete_Department = async (req, res) => {
     try {
         const { id } = req.params;
         // const { educationId } = req.params;
-        console.log('Department Id here', id)
+        // console.log('Department Id here', id)
 
         if (!id) {
             return res.send('Id not found')
@@ -69,7 +69,7 @@ module.exports.delete_Department = async (req, res) => {
         }
         const result = await Department.destroy({ where: { Department_Id: id } })
 
-        console.log("Department_information_update", req.body)
+        // console.log("Department_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

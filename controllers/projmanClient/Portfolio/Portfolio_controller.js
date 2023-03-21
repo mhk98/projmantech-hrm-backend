@@ -90,7 +90,7 @@ module.exports.delete_Portfolio= async (req, res) => {
     try {
         const { id } = req.params;
        // const { educationId } = req.params;
-        console.log('Portfolio Id here', id)
+        // console.log('Portfolio Id here', id)
 
         const isthere = await Portfolio.findAll({ where: { Content_Id: id } });
 
@@ -100,7 +100,7 @@ module.exports.delete_Portfolio= async (req, res) => {
         }
         const result = await Portfolio.destroy({ where: { Content_Id: id } })
 
-        console.log("Portfolio_information_update", req.body)
+        // console.log("Portfolio_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

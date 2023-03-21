@@ -58,7 +58,7 @@ module.exports.personal_information_update = async (req, res) => {
         }
         const result = await Personal_Information.update(req.body, { where: { Employee_Id: id } })
 
-        console.log("personal_information_update", req.body)
+        // console.log("personal_information_update", req.body)
         // if (!result) {
         //     return res.status(401).send({
         //         status: 'fail',

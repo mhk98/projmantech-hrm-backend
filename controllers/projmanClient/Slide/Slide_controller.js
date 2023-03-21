@@ -98,7 +98,7 @@ module.exports.delete_Slide = async (req, res) => {
     try {
         const { id } = req.params;
         // const { educationId } = req.params;
-        console.log('Slide Id here', id)
+        // console.log('Slide Id here', id)
 
         const isthere = await Slide.findAll({ where: { Content_Id: id } });
 
@@ -108,7 +108,7 @@ module.exports.delete_Slide = async (req, res) => {
         }
         const result = await Slide.destroy({ where: { Content_Id: id } })
 
-        console.log("Slide_information_update", req.body)
+        // console.log("Slide_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

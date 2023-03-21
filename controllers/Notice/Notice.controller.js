@@ -79,7 +79,7 @@ module.exports.updateNotice = async (req, res) => {
 module.exports.deleteNotice = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log('NoticeId', id);
+    // console.log('NoticeId', id);
     const deleted = await Notice.destroy({
       where: { notice_id: id }
     });

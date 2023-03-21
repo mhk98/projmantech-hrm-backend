@@ -96,7 +96,7 @@ module.exports.delete_BestService = async (req, res) => {
     try {
         const { id } = req.params;
         // const { educationId } = req.params;
-        console.log('BestService Id here', id)
+        // console.log('BestService Id here', id)
 
         const isthere = await BestService.findAll({ where: { Content_Id: id } });
 
@@ -106,7 +106,7 @@ module.exports.delete_BestService = async (req, res) => {
         }
         const result = await BestService.destroy({ where: { Content_Id: id } })
 
-        console.log("BestService_information_update", req.body)
+        // console.log("BestService_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

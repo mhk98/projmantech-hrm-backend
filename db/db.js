@@ -11,8 +11,8 @@ const sequelize = new Sequelize(
   `${process.env.DB_PASSWORD}`,
   {
     // host: 'sql12.freesqldatabase.com',
-    host: "192.168.0.111",
-    // host: "localhost",
+    // host: "192.168.0.115",
+    host: "localhost",
     dialect: "mysql",
     pool: { max: 5, min: 0, idle: 10000 },
     logging: false,
@@ -25,10 +25,10 @@ const sequelize = new Sequelize(
 sequelize
   .authenticate()
   .then(() => {
-    console.log("Database connected successfully");
+    // console.log("Database connected successfully");
   })
   .catch((error) => {
-    console.log("Error:", error.message);
+    // console.log("Error:", error.message);
   });
 
 const db = {};

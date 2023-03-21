@@ -97,7 +97,7 @@ module.exports.getOnePortService = async (req, res) => {
     try {
 
         const { id } = req.params;
-        console.log(" title ", id);
+        // console.log(" title ", id);
         const result = await PortService.findAll({ where: { Content_Id: id } });
 
         if (!result) {
@@ -124,7 +124,7 @@ module.exports.delete_PortService = async (req, res) => {
     try {
         const { id } = req.params;
         // const { educationId } = req.params;
-        console.log('PortService Id here', id)
+        // console.log('PortService Id here', id)
 
         const isthere = await PortService.findAll({ where: { Content_Id: id } });
 
@@ -134,7 +134,7 @@ module.exports.delete_PortService = async (req, res) => {
         }
         const result = await PortService.destroy({ where: { Content_Id: id } })
 
-        console.log("PortService_information_update", req.body)
+        // console.log("PortService_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

@@ -58,7 +58,7 @@ module.exports.family_information_update = async (req, res) => {
         }
         const result = await Emergency_Contact.update(req.body, { where: { addEmployeeEmployeeId: id } })
 
-        console.log("family_information_update", req.body)
+        // console.log("family_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

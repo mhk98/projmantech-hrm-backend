@@ -8,7 +8,7 @@ module.exports.insertEstimates = async (req, res) => {
 
     try {
         const estimates = req.body;
-        console.log('estimates', estimates)
+        // console.log('estimates', estimates)
         const result = await Estimates.create(estimates)
         if (!result) {
             return res.send('Result not found')
@@ -37,8 +37,8 @@ module.exports.updateEstimates = async (req, res) => {
     try {
         const estimates = req.body;
         const { id } = req.params;
-        console.log('estimates', estimates)
-        console.log('estimate id', id)
+        // console.log('estimates', estimates)
+        // console.log('estimate id', id)
         const result = await Estimates.update(estimates, {
             where: { Estimate_Id: id }
         })
@@ -67,7 +67,7 @@ module.exports.deleteEstimates = async (req, res) => {
     try {
         const estimates = req.body;
         const { id } = req.params;
-        console.log('estimates', estimates)
+        // console.log('estimates', estimates)
         const result = await Estimates.destroy({
             where: { Estimate_Id: id }
         })
@@ -75,6 +75,9 @@ module.exports.deleteEstimates = async (req, res) => {
             return res.send('Result not found')
 
         }
+        const delitem = await Items.destroy({
+            where: { Estimate_Id: id }
+        })
         res.status(200).send({
             status: "Success",
             message: "Successfully estimates information delete",

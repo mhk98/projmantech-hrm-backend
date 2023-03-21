@@ -63,7 +63,7 @@ module.exports.delete_Holiday= async (req, res) => {
     try {
         const { id } = req.params;
        // const { educationId } = req.params;
-        console.log('Holiday Id here', id)
+        // console.log('Holiday Id here', id)
 
         if (!id) {
             return res.send('Id not found')
@@ -71,7 +71,7 @@ module.exports.delete_Holiday= async (req, res) => {
         }
         const result = await Holiday.destroy({ where: { Holiday_Id: id } })
 
-        console.log("Holiday_information_update", req.body)
+        // console.log("Holiday_information_update", req.body)
         if (!result) {
             return res.status(401).send({
                 status: 'fail',

@@ -61,7 +61,7 @@ module.exports.delete_Asset= async (req, res) => {
     try {
         const { id } = req.params;
        // const { educationId } = req.params;
-        console.log('Asset Id here', id)
+        // console.log('Asset Id here', id)
 
         if (!id) {
             return res.send('Id not found')
@@ -69,7 +69,7 @@ module.exports.delete_Asset= async (req, res) => {
         }
         const result = await Asset.destroy({ where: { Assets_Id: id } })
 
-        console.log("Asset_information_update", req.body)
+        // console.log("Asset_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

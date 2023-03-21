@@ -530,3 +530,33 @@
 {"level":"error","message":"/api/v1/user/signup notNull Violation: usertbls.User_Name cannot be null","timestamp":"2023-03-11T05:01:04.250Z"}
 {"level":"error","message":"add_employee create Incorrect integer value: 'e2' for column 'User_ID' at row 1","timestamp":"2023-03-14T09:23:19.042Z"}
 {"level":"error","message":"add_employee create Incorrect integer value: 'e3' for column 'User_ID' at row 1","timestamp":"2023-03-14T09:35:47.865Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-17T17:15:39.580Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-18T03:24:41.463Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-18T04:13:49.330Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-18T04:40:19.325Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-18T04:54:54.763Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-18T04:59:45.773Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-18T07:28:39.800Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-18T08:13:01.376Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-19T04:56:43.814Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-19T05:20:39.756Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-20T11:33:05.053Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-20T11:35:39.418Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-20T11:53:31.501Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-20T11:55:43.729Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-20T13:11:45.589Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-20T13:57:43.910Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-20T13:58:40.078Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-20T13:58:43.674Z"}
+{"level":"error","message":"clientInsert Validation error","timestamp":"2023-03-20T13:59:38.235Z"}
+{"level":"error","message":"clientInsert Validation error","timestamp":"2023-03-20T14:00:10.676Z"}
+{"level":"error","message":"clientInsert Validation error","timestamp":"2023-03-20T14:21:40.642Z"}
+{"level":"error","message":"clientInsert Validation error","timestamp":"2023-03-20T14:24:45.837Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-20T14:32:30.771Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-21T04:55:49.672Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-21T04:58:07.431Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-21T05:03:49.039Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-21T05:06:18.855Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-21T05:09:54.423Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-21T05:10:23.919Z"}
+{"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-21T05:21:20.138Z"}

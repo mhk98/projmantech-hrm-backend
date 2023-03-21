@@ -64,7 +64,7 @@ module.exports.delete_Categories = async (req, res) => {
     try {
         const { id } = req.params;
         // const { educationId } = req.params;
-        console.log('Categories Id here', id)
+        // console.log('Categories Id here', id)
 
         if (!id) {
             return res.send('Id not found')
@@ -72,7 +72,7 @@ module.exports.delete_Categories = async (req, res) => {
         }
         const result = await categories.destroy({ where: { Category_Id: id } })
 
-        console.log("Categories_information_update", req.body)
+        // console.log("Categories_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

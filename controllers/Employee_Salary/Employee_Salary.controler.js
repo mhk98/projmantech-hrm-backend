@@ -9,7 +9,7 @@ module.exports.createEmployeeSalary = async (req, res) => {
     try {
         // destructuring the request body
         let { Employee_Name, Monthly_Salary } = req.body;
-        console.log('insertSalary', req.body)
+        // console.log('insertSalary', req.body)
 
         // console.log('employeeSalaryInfo', Employee_Name, Monthly_Salary, Employee_Id)
         // const { id } = req.params;
@@ -20,7 +20,7 @@ module.exports.createEmployeeSalary = async (req, res) => {
         //save month and year value in database
         let month = monthNames[monthIndex];
         // let year = (new Date().getFullYear());
-        console.log('(new Date().getMonth())', (new Date().getMonth()))
+        // console.log('(new Date().getMonth())', (new Date().getMonth()))
 
         // find all deductions for the employee
         // const deductions = await Deduction.findAll({
@@ -80,7 +80,7 @@ module.exports.getEmployeeSalary = async (req, res) => {
         //save month and year value in database
         let month = monthNames[monthIndex];
         // let year = (new Date().getFullYear());
-        console.log('(new Date().getMonth())', (new Date().getMonth()))
+        // console.log('(new Date().getMonth())', (new Date().getMonth()))
 
 
         // find all the salary records for the employee
@@ -103,8 +103,8 @@ module.exports.getIndividualEmployeeSalary = async (req, res) => {
 
 
 
-        console.log('payload', Salary_Month, Employee_Name)
-        console.log('getIndividualEmployeeSalary', Salary_Month, Employee_Name)
+        // console.log('payload', Salary_Month, Employee_Name)
+        // console.log('getIndividualEmployeeSalary', Salary_Month, Employee_Name)
 
         // find all the salary records for the employee
         const result = await Employee_Salary.findOne({
@@ -138,7 +138,7 @@ module.exports.getIndividualEmployeeSalary = async (req, res) => {
 module.exports.deleteEmployeeSalary = async (req, res) => {
     try {
         const { id } = req.params;
-        console.log('Salary_Id', id)
+        // console.log('Salary_Id', id)
         const result = await Employee_Salary.destroy({
             where: { Salary_Id: id },
         });
@@ -162,7 +162,7 @@ module.exports.deleteEmployeeSalary = async (req, res) => {
 module.exports.deleteSearchEmployeeSalary = async (req, res) => {
     try {
         const { id } = req.params;
-        console.log('Salary_Id', id)
+        // console.log('Salary_Id', id)
         const result = await Employee_Salary.destroy({
             where: { Salary_Id: id },
         });

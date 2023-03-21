@@ -7,10 +7,10 @@ const { DataTypes } = require("sequelize");
 db.sequelize
   .sync({ force: false })
   .then(() => {
-    console.log("Connection re-synced");
+    // console.log("Connection re-synced");
   })
   .catch((err) => {
-    console.log("Error on re-synced", err);
+    // console.log("Error on re-synced", err);
   });
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -154,19 +154,55 @@ db.Termination = require("../models/Termination/Termination")(
 
 // cient site contents
 
-db.Aboutus = require("./projmanClient/Aboutus/Aboutus")(db.sequelize, DataTypes);
-db.Bestfeature = require("./projmanClient/Bestfeature/Bestfeature")(db.sequelize, DataTypes);
-db.BestService = require("./projmanClient/BestService/BestService")(db.sequelize, DataTypes);
-db.Clientmassage = require("./projmanClient/Clientmassage/Clientmassage")(db.sequelize, DataTypes);
-db.Contact = require("./projmanClient/Contact/Contact")(db.sequelize, DataTypes);
-db.Countof = require("./projmanClient/Countof/Countof")(db.sequelize, DataTypes);
-db.Exclusive = require("./projmanClient/Exclusive/Exclusive")(db.sequelize, DataTypes);
-db.ExService = require("./projmanClient/ExService/ExService")(db.sequelize, DataTypes);
-db.Portfolio = require("./projmanClient/Portfolio/Portfolio")(db.sequelize, DataTypes);
-db.PortService = require("./projmanClient/PortService/PortService")(db.sequelize, DataTypes);
+db.Aboutus = require("./projmanClient/Aboutus/Aboutus")(
+  db.sequelize,
+  DataTypes
+);
+db.Bestfeature = require("./projmanClient/Bestfeature/Bestfeature")(
+  db.sequelize,
+  DataTypes
+);
+db.BestService = require("./projmanClient/BestService/BestService")(
+  db.sequelize,
+  DataTypes
+);
+db.Clientmassage = require("./projmanClient/Clientmassage/Clientmassage")(
+  db.sequelize,
+  DataTypes
+);
+db.Contact = require("./projmanClient/Contact/Contact")(
+  db.sequelize,
+  DataTypes
+);
+db.Countof = require("./projmanClient/Countof/Countof")(
+  db.sequelize,
+  DataTypes
+);
+db.Exclusive = require("./projmanClient/Exclusive/Exclusive")(
+  db.sequelize,
+  DataTypes
+);
+db.ExService = require("./projmanClient/ExService/ExService")(
+  db.sequelize,
+  DataTypes
+);
+db.Portfolio = require("./projmanClient/Portfolio/Portfolio")(
+  db.sequelize,
+  DataTypes
+);
+db.PortService = require("./projmanClient/PortService/PortService")(
+  db.sequelize,
+  DataTypes
+);
 db.Slide = require("./projmanClient/Slide/Slide")(db.sequelize, DataTypes);
-db.PortCategories = require("./projmanClient/PortCategories/PortCategories")(db.sequelize, DataTypes);
-db.OurClient = require("./projmanClient/OurClient/OurClient")(db.sequelize, DataTypes);
+db.PortCategories = require("./projmanClient/PortCategories/PortCategories")(
+  db.sequelize,
+  DataTypes
+);
+db.OurClient = require("./projmanClient/OurClient/OurClient")(
+  db.sequelize,
+  DataTypes
+);
 db.Job = require("./Job/Job")(db.sequelize, DataTypes);
 
 //////////////////////////////////
@@ -226,8 +262,8 @@ db.Invoices.belongsTo(db.PMT_Projects, { foreignkey: "Project_ID" });
 db.Estimates.hasMany(db.Items, { foreignkey: "Estimate_Id" });
 db.Items.belongsTo(db.Estimates, { foreignkey: "Estimate_Id" });
 
-db.Invoices.hasMany(db.Items, { foreignkey: 'Invoice_Id' });
-db.Items.belongsTo(db.Invoices, { foreignkey: 'Invoice_Id' });
+db.Invoices.hasMany(db.Items, { foreignkey: "Invoice_Id" });
+db.Items.belongsTo(db.Invoices, { foreignkey: "Invoice_Id" });
 
 db.add_employee.hasOne(db.Payslip, { foreignkey: "Employee_Id" });
 db.Payslip.belongsTo(db.add_employee, { foreignkey: "Employee_Id" });

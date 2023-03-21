@@ -58,7 +58,7 @@ module.exports.delete_Budget_Revenue= async (req, res) => {
     try {
         const { id } = req.params;
        // const { educationId } = req.params;
-        console.log('Budget Id here', id)
+        // console.log('Budget Id here', id)
 
         if (!id) {
             return res.send('Id not found')
@@ -66,7 +66,7 @@ module.exports.delete_Budget_Revenue= async (req, res) => {
         }
         const result = await budget_Revenues.destroy({ where: { Revenue_Id: id } })
 
-        console.log("Budget_information_update", req.body)
+        // console.log("Budget_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

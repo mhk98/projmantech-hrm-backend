@@ -66,7 +66,7 @@ module.exports.getAnnualLeaveDays = async (req, res) => {
         maxMonthLeavedays = 0;
       }
     } // Send the pending leaves to the admin
-    console.log("maxMonthLeavedays", maxMonthLeavedays);
+    // console.log("maxMonthLeavedays", maxMonthLeavedays);
     res.status(200).json({ maxLeaveForCurrentMonth: maxMonthLeavedays });
     // res.sendStatus(200).send(maxMonthLeavedays);
     // res.status(200)
@@ -134,11 +134,11 @@ module.exports.applyLeave = async (req, res) => {
     // let AllowedMaxleaveDays = req.body.AllowedMaxleaveDays;
     let Leave_Reason = req.body.Leave_Reason;
 
-    console.log("Leave Reason 1-----------------------------", Leave_Reason);
+    // console.log("Leave Reason 1-----------------------------", Leave_Reason);
 
     // Check if the start date is before the end date
     if (moment(startDate).isAfter(moment(endDate))) {
-      console.log("Start date must be before end date");
+      // console.log("Start date must be before end date");
       // throw new Error("Start date must be before end date");
       return res
         .status(200)
@@ -207,7 +207,7 @@ module.exports.applyLeave = async (req, res) => {
       const date2 = moment(Moment_endDate);
 
       const diffInYears = date2.diff(date1, "years");
-      console.log("diffInYears", diffInYears);
+      // console.log("diffInYears", diffInYears);
 
       if (diffInYears >= 1) {
         remainingLeaves = 12;
@@ -233,7 +233,7 @@ module.exports.applyLeave = async (req, res) => {
       //check maxallowed leave and ApplicableLeaveDays
       // console.log(AllowedMaxleaveDays , ApplicableLeaveDays);
       if (maxMonthLeavedays >= ApplicableLeaveDays) {
-        console.log("ok to approve");
+        // console.log("ok to approve");
         leaveApplicationStatus = "OK TO APPROVE";
         // remainingLeaves = remainingLeaves - ApplicableLeaveDays;
         if (remainingLeaves - ApplicableLeaveDays < 0) {
@@ -264,10 +264,10 @@ module.exports.applyLeave = async (req, res) => {
         leaveObject.addEmployeeEmployeeId = addEmployeeEmployeeId;
         leaveObject.Leave_Reason = Leave_Reason;
 
-        console.log(
-          " Leave Remaning-----------------------------",
-          remainingLeaves
-        );
+        // console.log(
+        //   " Leave Remaning-----------------------------",
+        //   remainingLeaves
+        // );
         //Leave_Reason
 
         //creating the leave instance for this req
@@ -284,7 +284,7 @@ module.exports.applyLeave = async (req, res) => {
           ErrorLogger.error("leaveInsert" + " " + error.message);
         }
       } else {
-        console.log("Not ok to approve");
+        // console.log("Not ok to approve");
         leaveApplicationStatus = `Asked leave days are more than Allowed leave days .select unpaid leave category`;
         return res.status(200).json({ error: leaveApplicationStatus });
       }
@@ -310,10 +310,10 @@ module.exports.applyLeave = async (req, res) => {
       leaveObject.CountedDaysOfTakenLeave = ApplicableLeaveDays;
       leaveObject.addEmployeeEmployeeId = addEmployeeEmployeeId;
       leaveObject.Leave_Reason = Leave_Reason;
-      console.log(
-        " Leave Reason-----------------unpaid------------",
-        leaveObject.Leave_Reason
-      );
+      // console.log(
+      //   " Leave Reason-----------------unpaid------------",
+      //   leaveObject.Leave_Reason
+      // );
       //creating the leave instance for this req
       try {
         const leaveInsert = await Leave.create(leaveObject);
@@ -575,7 +575,7 @@ async function getDaybyname(thisdate) {
 
     return a;
   } catch (error) {
-    console.log("Error", error.message);
+    // console.log("Error", error.message);
     // res.status(500).send(error);
   }
 }
@@ -588,10 +588,10 @@ async function holidaynaki(thisdate) {
   });
 
   if (!holidays) {
-    console.log("Table data of holiday", holidays);
+    // console.log("Table data of holiday", holidays);
     return 0;
   } else {
-    console.log("Nai holiday");
+    // console.log("Nai holiday");
     return 1;
   }
 }
@@ -603,35 +603,35 @@ async function holidayChecker(dates) {
       // console.log("Function call-------------------",getDaybyname(dates[i]));
 
       getDaybyname(dates[i]).then((result) => {
-        console.log("result", result);
+        // console.log("result", result);
         let dayName = result;
         if (dayName === "Friday") {
           dates.splice(i, 1);
-          console.log("Friday porse--------------------------------");
+          // console.log("Friday porse--------------------------------");
 
-          console.log("after splice friday", dates);
+          // console.log("after splice friday", dates);
 
           //console.log("arry obj friday", dates[i]);
         } else {
-          console.log("$$$");
+          // console.log("$$$");
         }
       });
 
       holidaynaki(dates[i]).then((result) => {
         let dayName2 = result;
-        console.log("for 1 yes or 0 for no ", dayName2, dates[i]);
+        // console.log("for 1 yes or 0 for no ", dayName2, dates[i]);
         if (dayName2 == 1) {
           dates.splice(i, 1);
-          console.log("Holiday porse--------------------------------");
-          console.log("after splice friday", dates);
+          // console.log("Holiday porse--------------------------------");
+          // console.log("after splice friday", dates);
         } else {
-          console.log("$$$");
+          // console.log("$$$");
         }
       });
 
-      console.log("After deduction", dates);
+      // console.log("After deduction", dates);
     } catch (error) {
-      console.log(error.message);
+      // console.log(error.message);
     }
   }
 
@@ -697,7 +697,7 @@ module.exports.declineLeave = async (req, res) => {
     const leave = await Leave.findOne({
       where: { Leave_Id: Leave_Id },
     });
-    console.log("leave", leave);
+    // console.log("leave", leave);
 
     if (!leave) {
       return res.status(404).send("Leave request not found");
@@ -723,7 +723,7 @@ module.exports.allLeaves = async (req, res) => {
       }
     );
     res.status(200).send(leave);
-    console.log("paaaiiiiisi", leave);
+    // console.log("paaaiiiiisi", leave);
   } catch (error) {
     ErrorLogger.error("all leave" + " " + error.message);
     res.status(500).send(error);
@@ -743,10 +743,10 @@ module.exports.allLeavecount = async (req, res) => {
       }
     );
 
-    console.log("The count----------", leave);
+    // console.log("The count----------", leave);
 
     res.status(200).send(leave);
-    console.log("paaaiiiiisi", leave);
+    // console.log("paaaiiiiisi", leave);
   } catch (error) {
     ErrorLogger.error("all leave" + " " + error.message);
     res.status(500).send(error);
@@ -758,7 +758,7 @@ module.exports.LeaveCount = async (req, res) => {
   try {
     const leaveCount = await Leave.count({ where: { status: "pending" } }).then(
       (leave) => {
-        console.log("leave", leave);
+        // console.log("leave", leave);
         // if (!task) {
         //     return res.status(404).send('leaveCount not found')
         // }
@@ -782,16 +782,16 @@ module.exports.LeaveCount = async (req, res) => {
 /// get all from to date leave
 module.exports.fromtodateLeave = async (req, res) => {
   try {
-    console.log("It's here");
+    // console.log("It's here");
     startDate = req.body.startDate;
     endDate = req.body.endDate;
-    console.log("the startDate", startDate, "the endDate", endDate);
-    console.log(
-      "the startDate from req",
-      req.body.startDate,
-      "the endDate from req",
-      req.body.endDate
-    );
+    // console.log("the startDate", startDate, "the endDate", endDate);
+    // console.log(
+    //   "the startDate from req",
+    //   req.body.startDate,
+    //   "the endDate from req",
+    //   req.body.endDate
+    // );
     const leave = await sequelize.query(
       "SELECT * FROM Leaves WHERE endDate BETWEEN ? AND ?;",
       {
@@ -800,7 +800,7 @@ module.exports.fromtodateLeave = async (req, res) => {
       }
     );
     res.status(200).send(leave);
-    console.log("paaaiiiiisi", leave);
+    // console.log("paaaiiiiisi", leave);
   } catch (error) {
     ErrorLogger.error("all leave" + " " + error.message);
     res.status(500).send(error);
@@ -810,7 +810,7 @@ module.exports.fromtodateLeave = async (req, res) => {
 /// get all from to date leave for speccific employee
 module.exports.fromtoemployeeLeave = async (req, res) => {
   try {
-    console.log("It's here");
+    // console.log("It's here");
     startDate = req.body.startDate;
     endDate = req.body.endDate;
     id = req.body.id;
@@ -822,7 +822,7 @@ module.exports.fromtoemployeeLeave = async (req, res) => {
       }
     );
     res.status(200).send(leave);
-    console.log("paaaiiiiisi", leave);
+    // console.log("paaaiiiiisi", leave);
   } catch (error) {
     ErrorLogger.error("all leave" + " " + error.message);
     res.status(500).send(error);

@@ -61,7 +61,7 @@ module.exports.delete_Designation= async (req, res) => {
     try {
         const { id } = req.params;
        // const { educationId } = req.params;
-        console.log('Designation Id here', id)
+        // console.log('Designation Id here', id)
 
         if (!id) {
             return res.send('Id not found')
@@ -69,7 +69,7 @@ module.exports.delete_Designation= async (req, res) => {
         }
         const result = await Designation.destroy({ where: { Designation_Id: id } })
 
-        console.log("Designation_information_update", req.body)
+        // console.log("Designation_information_update", req.body)
         if (!result) {
       return res.send('Result not found')
             

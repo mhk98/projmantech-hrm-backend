@@ -145,7 +145,7 @@ module.exports.getProjectEmployee = async (req, res) => {
         })
 
 
-        console.log("ki re vai", result);
+        // console.log("ki re vai", result);
         if (!result) {
             return res.send('Result not found')
         }
@@ -180,7 +180,7 @@ module.exports.getEmployeeProject = async (req, res) => {
             type: sequelize.QueryTypes.SELECT
         })
 
-        console.log('RRRRR', result);
+        // console.log('RRRRR', result);
 
         if (!result) {
             res.status(400).send({

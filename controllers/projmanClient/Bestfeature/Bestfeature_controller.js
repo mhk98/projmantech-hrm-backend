@@ -90,7 +90,7 @@ module.exports.delete_Bestfeature= async (req, res) => {
     try {
         const { id } = req.params;
        // const { educationId } = req.params;
-        console.log('Bestfeature Id here', id)
+        // console.log('Bestfeature Id here', id)
 
         const isthere = await Bestfeature.findAll( {where: { Content_Id: id } });
 
@@ -100,7 +100,7 @@ module.exports.delete_Bestfeature= async (req, res) => {
         }
         const result = await Bestfeature.destroy({ where: { Content_Id: id } })
 
-        console.log("Bestfeature_information_update", req.body)
+        // console.log("Bestfeature_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

@@ -15,9 +15,9 @@ module.exports.createDeduction = async (req, res) => {
 
     //save month and year value in database
     let month = monthNames[monthIndex];
-    console.log('month', month)
+    // console.log('month', month)
     // let year = (new Date().getFullYear());
-    console.log('(new Date().getMonth())', (new Date().getMonth()))
+    // console.log('(new Date().getMonth())', (new Date().getMonth()))
 
     const deduction = await Deduction.create({
       Deduction_Reason,
@@ -48,8 +48,7 @@ module.exports.createDeduction = async (req, res) => {
       // console.log("Decuction--------------------------------------", deduct);
     });
 
-    console.log('totalDeducation', totalDeduction)
-
+    // console.log('totalDeducation', totalDeduction)
 
     const employeeMonthlySalary = await Employee_Salary.findOne({
       where: {
@@ -83,7 +82,7 @@ module.exports.createDeduction = async (req, res) => {
 
 ///get invidual deduction by invidual employee id
 module.exports.getDeductionInvidual = async (req, res) => {
-  console.log("getDeduction");
+  // console.log("getDeduction");
   try {
     const { Employee_Name } = req.params;
     const deduction = await Deduction.findAll({ where: { Employee_Name: Employee_Name } });

@@ -7,7 +7,7 @@ const { customerLogger, ErrorLogger } = require("../../utils/logger");
 module.exports.insert_Educaion_Information = async (req, res) => {
     const { id } = req.params
     const { Subject, Starting_Date, Complete_Date, Degree, Institution } = req.body;
-    console.log(req.body)
+    // console.log(req.body)
     let body = {
         Subject, Starting_Date, Complete_Date, Degree, Institution,
         addEmployeeEmployeeId: id
@@ -37,7 +37,7 @@ module.exports.get_All_Education_info = async (req, res) => {
     try {
         const { employeeId } = req.params;
 
-        console.log('employee and education Id here', employeeId)
+        // console.log('employee and education Id here', employeeId)
 
         if (!employeeId) {
             return res.send('employeeId not found')
@@ -74,7 +74,7 @@ module.exports.update_Education_information = async (req, res) => {
     try {
         const { employeeId } = req.params;
         const { educationId } = req.params;
-        console.log('employee and education Id here', employeeId, educationId)
+        // console.log('employee and education Id here', employeeId, educationId)
 
         if (!employeeId && !educationId) {
             return res.send('EmployeeId or EducationId not found')
@@ -110,7 +110,7 @@ module.exports.delete_Education_Information = async (req, res) => {
     try {
         const { employeeId } = req.params;
         const { educationId } = req.params;
-        console.log('employee and education Id here', employeeId, educationId)
+        // console.log('employee and education Id here', employeeId, educationId)
 
         if (!employeeId && !educationId) {
             return res.send('EmployeeId or EducationId not found')
@@ -118,7 +118,7 @@ module.exports.delete_Education_Information = async (req, res) => {
         }
         const result = await Education_Informations.destroy({ where: { addEmployeeEmployeeId: employeeId, Education_Id: educationId } })
 
-        console.log("education_information_update", req.body)
+        // console.log("education_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

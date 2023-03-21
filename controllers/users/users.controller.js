@@ -46,7 +46,7 @@ exports.signup = async (req, res) => {
 exports.getAllUsers = async (req, res) => {
   try {
     // const users = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     const user = await User.findAll();
     // console.log('data save on database', user)
     if (!user) {
@@ -69,7 +69,7 @@ exports.getSingleUser = async (req, res) => {
   try {
     const { id } = req.params;
     // const users = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     const user = await User.findOne({
       where: { User_ID: id },
     });
@@ -105,7 +105,7 @@ exports.getSingleUser = async (req, res) => {
 exports.login = async (req, res, next) => {
   try {
     const { User_Email, pass_word } = req.body;
-    console.log(User_Email, pass_word);
+    // console.log(User_Email, pass_word);
 
     if (!User_Email || !pass_word) {
       return res.status(400).send("Please provide your credentials");
@@ -121,7 +121,7 @@ exports.login = async (req, res, next) => {
     const isPasswordValid = bcrypt.compareSync(pass_word, user.pass_word);
     // const isPasswordValid = user.compareSync(pass_word, user.pass_word);
     // console.log(user.pass_word, pass_word)
-    console.log("isPasswordValid", isPasswordValid);
+    // console.log("isPasswordValid", isPasswordValid);
 
     if (!isPasswordValid) {
       return res.status(400).send("Password or email is not correct");
@@ -162,7 +162,7 @@ exports.login = async (req, res, next) => {
 
 // User role information update
 module.exports.update_user = async (req, res) => {
-  console.log('update_user', req.body);
+  // console.log('update_user', req.body);
   try {
     const { id } = req.params;
     if (!id) {

@@ -17,7 +17,7 @@ module.exports.insertClientmassage = async (req, res) => {
 
     try {
         const ClientmassageInfo = req.body;
-        console.log('ClientInfo', req.body)
+        // console.log('ClientInfo', req.body)
         const result = await Clientmassage.create(ClientmassageInfo)
         if (!result) {
             return res.send('Result not found')
@@ -109,7 +109,7 @@ module.exports.delete_Clientmassage = async (req, res) => {
     try {
         const { id } = req.params;
         // const { educationId } = req.params;
-        console.log('Clientmassage Id here', id)
+        // console.log('Clientmassage Id here', id)
 
         const isthere = await Clientmassage.findAll({ where: { Massage_Id: id } });
 
@@ -119,7 +119,7 @@ module.exports.delete_Clientmassage = async (req, res) => {
         }
         const result = await Clientmassage.destroy({ where: { Massage_Id: id } })
 
-        console.log("Clientmassage_information_update", req.body)
+        // console.log("Clientmassage_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

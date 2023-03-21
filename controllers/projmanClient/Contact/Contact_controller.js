@@ -90,7 +90,7 @@ module.exports.delete_Contact= async (req, res) => {
     try {
         const { id } = req.params;
        // const { educationId } = req.params;
-        console.log('Contact Id here', id)
+        // console.log('Contact Id here', id)
 
         const isthere = await Contact.findAll({ where: { Content_Id: id } });
 
@@ -100,7 +100,7 @@ module.exports.delete_Contact= async (req, res) => {
         }
         const result = await Contact.destroy({ where: { Content_Id: id } })
 
-        console.log("Contact_information_update", req.body)
+        // console.log("Contact_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

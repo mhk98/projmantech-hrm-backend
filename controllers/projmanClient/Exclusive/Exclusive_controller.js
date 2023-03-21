@@ -90,7 +90,7 @@ module.exports.delete_Exclusive= async (req, res) => {
     try {
         const { id } = req.params;
        // const { educationId } = req.params;
-        console.log('Exclusive Id here', id)
+        // console.log('Exclusive Id here', id)
 
         const isthere = await Exclusive.findAll({ where: { Content_Id: id } });
 
@@ -100,7 +100,7 @@ module.exports.delete_Exclusive= async (req, res) => {
         }
         const result = await Exclusive.destroy({ where: { Content_Id: id } })
 
-        console.log("Exclusive_information_update", req.body)
+        // console.log("Exclusive_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

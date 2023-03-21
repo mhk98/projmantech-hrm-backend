@@ -22,7 +22,7 @@ module.exports.createPayslip = async (req, res) => {
 
 ///get invidual Payslip by invidual employee id
 module.exports.getPayslipInvidual = async(req, res)=>{
-  console.log("getPayslip");
+  // console.log("getPayslip");
   try {
       const { Employee_Id} = req.params;
       const payslip = await Payslip.findAll({ where: { addEmployeeEmployeeId:Employee_Id } });

@@ -160,7 +160,7 @@ module.exports.delete_Client = async (req, res) => {
 module.exports.clientCount = async (req, res) => {
   try {
     const clientCount = await Clients.count().then((client) => {
-      console.log("client", client);
+      // console.log("client", client);
 
       if (!client) {
         return res.status(404).send("Clientcount not found");

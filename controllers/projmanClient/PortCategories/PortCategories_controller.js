@@ -61,7 +61,7 @@ module.exports.delete_PortCategories = async (req, res) => {
     try {
         const { id } = req.params;
         // const { educationId } = req.params;
-        console.log('PortCategories Id here', id)
+        // console.log('PortCategories Id here', id)
 
         if (!id) {
             return res.send('Id not found')
@@ -69,7 +69,7 @@ module.exports.delete_PortCategories = async (req, res) => {
         }
         const result = await portCategories.destroy({ where: { Category_Id: id } })
 
-        console.log("PortCategories_information_update", req.body)
+        // console.log("PortCategories_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

@@ -61,7 +61,7 @@ module.exports.delete_Job= async (req, res) => {
     try {
         const { id } = req.params;
        // const { educationId } = req.params;
-        console.log('Job Id here', id)
+        // console.log('Job Id here', id)
 
         if (!id) {
             return res.send('Id not found')
@@ -69,7 +69,7 @@ module.exports.delete_Job= async (req, res) => {
         }
         const result = await job.destroy({ where: { Job_Id: id } })
 
-        console.log("Job_information_update", req.body)
+        // console.log("Job_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

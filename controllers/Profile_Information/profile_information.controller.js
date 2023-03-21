@@ -111,7 +111,7 @@ module.exports.single_profile_information = async (req, res) => {
 module.exports.profile_information_update = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log("paramsId", id);
+    // console.log("paramsId", id);
     const {
       Address,
       Employee_LastName,
@@ -153,7 +153,7 @@ module.exports.profile_information_update = async (req, res) => {
       Img: req.file.path,
     };
 
-    console.log("profileInfoUpdate", data);
+    // console.log("profileInfoUpdate", data);
     const result = await Profile_Information.update(data, {
       where: { Employee_Id: id },
     });

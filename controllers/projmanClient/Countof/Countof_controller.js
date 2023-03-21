@@ -96,7 +96,7 @@ module.exports.delete_Countof = async (req, res) => {
     try {
         const { id } = req.params;
         // const { educationId } = req.params;
-        console.log('Countof Id here', id)
+        // console.log('Countof Id here', id)
 
         const isthere = await Countof.findAll({ where: { Count_Id: id } });
 
@@ -106,7 +106,7 @@ module.exports.delete_Countof = async (req, res) => {
         }
         const result = await Countof.destroy({ where: { Count_Id: id } })
 
-        console.log("Countof_information_update", req.body)
+        // console.log("Countof_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

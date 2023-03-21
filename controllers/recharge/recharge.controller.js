@@ -36,7 +36,7 @@ module.exports.rechargeInsert = async (req, res) => {
 
             if (result) {
                 res.json(createResponse(true, result, 'Record inserted'));
-                console.log(result);
+                // console.log(result);
             }
         }
     } catch (error) {

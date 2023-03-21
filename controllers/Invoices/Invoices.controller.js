@@ -1,4 +1,5 @@
-const db = require("../../db/db")
+const db = require("../../db/db");
+const Items = require("../../models/Items/Items");
 const Invoices = db.Invoices;
 const Payment = db.Payments
 
@@ -61,7 +62,7 @@ module.exports.getSingleVoice = async (req, res) => {
             where: { Status: 'Paid' }
         })
 
-        console.log('Paid payment', result)
+        // console.log('Paid payment', result)
 
         if (!result) {
             return res.send('Result not found')
@@ -101,7 +102,7 @@ module.exports.updateInvoices = async (req, res) => {
         }
 
         const invodata = await Invoices.findOne({ where: { Invoice_Id: id } })
-        console.log("invodata", invodata);
+        // console.log("invodata", invodata);
         // console.log("Status", invodata.Status);
         // console.log("invodata", invodata);
         // const { Invoice_Id, Grand_Total, Status } = invodata;
@@ -148,7 +149,7 @@ module.exports.deleteInvoices = async (req, res) => {
     try {
         const invoices = req.body;
         const { id } = req.params;
-        console.log('invoices', invoices)
+        // console.log('invoices', invoices)
         const result = await Invoices.destroy({
             where: { Invoice_Id: id }
         })
@@ -156,6 +157,9 @@ module.exports.deleteInvoices = async (req, res) => {
             return res.send('Result not found')
 
         }
+        const delitem = await Items.destroy({
+            where: { Invoice_Id: id }
+        })
         res.status(200).send({
             status: "Success",
             message: "Successfully Invoices information delete",

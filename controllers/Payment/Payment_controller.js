@@ -61,7 +61,7 @@ module.exports.delete_Payment = async (req, res) => {
     try {
         const { id } = req.params;
         // const { educationId } = req.params;
-        console.log('Payment Id here', id)
+        // console.log('Payment Id here', id)
 
         if (!id) {
             return res.send('Id not found')
@@ -69,7 +69,7 @@ module.exports.delete_Payment = async (req, res) => {
         }
         const result = await Payment.destroy({ where: { Payments_Id: id } })
 
-        console.log("Payment_information_update", req.body)
+        // console.log("Payment_information_update", req.body)
         if (!result) {
             return res.send('Result not found')
 

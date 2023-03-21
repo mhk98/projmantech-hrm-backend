@@ -9,10 +9,10 @@ const { customerLogger, ErrorLogger } = require("../../utils/logger");
 module.exports.insertAttendanceInfo = async (req, res, next) => {
   try {
     const { id } = req.params;
-    console.log("addEmployeeEmployeeId", id);
+    // console.log("addEmployeeEmployeeId", id);
     const { Employee_Name } = req.body;
 
-    console.log("Employee_Name", Employee_Name);
+    // console.log("Employee_Name", Employee_Name);
 
     if (!id || !Employee_Name) {
       return res.send("Id or Employee name not found");
@@ -66,7 +66,7 @@ module.exports.insertAttendanceInfo = async (req, res, next) => {
         Date_Today: new Date(),
       },
     });
-    console.log("existInsertcheck", existInsertcheck);
+    // console.log("existInsertcheck", existInsertcheck);
     if (!existInsertcheck) {
       const result = await Attendance.create(rest);
 
@@ -196,7 +196,7 @@ module.exports.getSingleAttendanceToday = async (req, res) => {
 module.exports.getSingleEmployeeAllAttendance = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log("attendance params", id);
+    // console.log("attendance params", id);
     if (!id) {
       return res.status(404).send("Params id not found");
     }
@@ -207,7 +207,7 @@ module.exports.getSingleEmployeeAllAttendance = async (req, res) => {
       },
     });
 
-    console.log("adminresult", result);
+    // console.log("adminresult", result);
     if (!result) {
       return res.status(404).send("Attendance information not found");
     }
@@ -234,8 +234,8 @@ module.exports.searchingAttendance = async (req, res) => {
     const { id } = req.params;
     const endOfDateRange = new Date(startDate);
     const startOfDateRange = new Date(endDate);
-    console.log("endOfDateRange", endOfDateRange);
-    console.log("startOfDateRange", startOfDateRange);
+    // console.log("endOfDateRange", endOfDateRange);
+    // console.log("startOfDateRange", startOfDateRange);
 
     const result = await Attendance.findAll({
       where: {
@@ -309,12 +309,12 @@ module.exports.searchingAttendance = async (req, res) => {
 module.exports.searchingAttendanceForAdmin = async (req, res) => {
   try {
     const { startDate, endDate } = req.body;
-    console.log("information", startDate, endDate);
+    // console.log("information", startDate, endDate);
     const { id } = req.params;
     const endOfDateRange = new Date(startDate);
     const startOfDateRange = new Date(endDate);
-    console.log("endOfDateRange", endOfDateRange);
-    console.log("startOfDateRange", startOfDateRange);
+    // console.log("endOfDateRange", endOfDateRange);
+    // console.log("startOfDateRange", startOfDateRange);
     const result = await Attendance.findAll({
       where: {
         addEmployeeEmployeeId: id,

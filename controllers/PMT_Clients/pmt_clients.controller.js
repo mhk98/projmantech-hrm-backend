@@ -7,7 +7,6 @@ module.exports.clientInsert = async (req, res) => {
   try {
     const clientInfo = req.body;
     const {
-      Client_Id,
       Client_FirstName,
       Client_LastName,
       Client_Email,
@@ -19,7 +18,6 @@ module.exports.clientInsert = async (req, res) => {
     } = req.body;
     // console.log("clientInfo", req.file);
     const result = await Clients.create({
-      Client_Id,
       Client_FirstName,
       Client_LastName,
       Client_Email,

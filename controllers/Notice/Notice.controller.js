@@ -26,9 +26,7 @@ module.exports.getNotices = async (req, res) => {
 
   // console.log('query object', queryObject);
   try {
-    const result = await Notice.findAll(
-      sort('notice_description', 'notice_title')
-    );
+    const result = await Notice.findAll();
     if (!result) {
       return res.status(404).send('result not found')
     }

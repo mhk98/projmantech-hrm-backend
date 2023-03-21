@@ -37,6 +37,11 @@ module.exports.insertItems = async (req, res) => {
 
             const result = await Items.create(a)
 
+            res.status(200).send({
+                status: 'Success',
+                message: 'Successfully added item information',
+                data: result
+            })
 
             // console.log('result', result);
         }
@@ -44,7 +49,6 @@ module.exports.insertItems = async (req, res) => {
         // console.log('Total amount', totalamount);
 
         // console.log("Call function", updateamount(totalamount, latestEstimatesId));
-
 
 
 
@@ -94,7 +98,13 @@ module.exports.insertInvoiceItems = async (req, res) => {
 
             const result = await Items.create(a)
 
-            console.log('result', a);
+            res.status(200).send({
+                status: 'Success',
+                message: 'Successfully added item information',
+                data: result
+            })
+
+            // console.log('result', a);
         }
 
         // console.log('Total amount', totalamount);

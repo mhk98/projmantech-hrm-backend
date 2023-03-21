@@ -578,3 +578,6 @@
 {"level":"error","message":"Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:29:42.087Z"}
 {"level":"error","message":"Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:30:03.642Z"}
 {"level":"error","message":"Access denied for user 'pmt'@'DESKTOP-E85D17B' (using password: YES)","timestamp":"2023-03-21T06:30:23.482Z"}
+{"level":"error","message":"clientInsert Cannot read property 'path' of undefined","timestamp":"2023-03-21T09:29:53.116Z"}
+{"level":"error","message":"add_employee create Incorrect integer value: 'E-1' for column 'User_ID' at row 1","timestamp":"2023-03-21T09:45:09.467Z"}
+{"level":"error","message":"/api/v1/profile_information/2 Cannot read property 'path' of undefined","timestamp":"2023-03-21T10:06:00.901Z"}

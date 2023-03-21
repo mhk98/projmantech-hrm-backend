@@ -18,8 +18,17 @@ module.exports.createNotice = async (req, res) => {
 };
 
 module.exports.getNotices = async (req, res) => {
+
+  // const queryObject = { ...req.query }
+  // const excludeFields = ['notice_title', 'limit']
+  // excludeFields.forEach(field => delete queryObject[field])
+  // console.log('original object', req.query);
+
+  // console.log('query object', queryObject);
   try {
-    const result = await Notice.findAll();
+    const result = await Notice.findAll(
+      sort('notice_description', 'notice_title')
+    );
     if (!result) {
       return res.status(404).send('result not found')
     }

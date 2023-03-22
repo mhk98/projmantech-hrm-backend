@@ -5,7 +5,7 @@ const { upload } = require('../../../middlewares/upload')
 router.post("/", upload, Aboutus.insertAboutus)
 router.delete("/:id", Aboutus.delete_Aboutus)
 router.get("/", Aboutus.getAllAboutus)
-router.patch("/:id", Aboutus.updateAboutus)
+router.put("/:id", Aboutus.updateAboutus)
 
 
 

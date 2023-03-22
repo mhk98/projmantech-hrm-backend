@@ -21,9 +21,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.ENUM('pending', 'approved', 'rejected'),
             defaultValue: 'pending'
         },
-        annualLeaves: {
+        unpaidLeaves: {
             type: DataTypes.INTEGER,
-            defaultValue: 12
+            allowNull: true
         },
         remainingLeaves: {
             type: DataTypes.INTEGER,

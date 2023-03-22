@@ -4,7 +4,7 @@ const Exclusive = require('../../../controllers/projmanClient/Exclusive/Exclusiv
 router.post("/", Exclusive.insertExclusive)
 router.delete("/:id", Exclusive.delete_Exclusive)
 router.get("/", Exclusive.getAllExclusive)
-router.patch("/:id", Exclusive.updateExclusive)
+router.put("/:id", Exclusive.updateExclusive)
 
 
 

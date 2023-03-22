@@ -5,7 +5,7 @@ const { upload } = require('../../../middlewares/upload')
 router.post("/",upload, Bestfeature.insertBestfeature)
 router.delete("/:id", Bestfeature.delete_Bestfeature)
 router.get("/", Bestfeature.getAllBestfeature)
-router.patch("/:id", Bestfeature.updateBestfeature)
+router.put("/:id", Bestfeature.updateBestfeature)
 
 
 

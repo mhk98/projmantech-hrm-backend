@@ -150,7 +150,7 @@ module.exports.deleteInvoices = async (req, res) => {
     try {
         const invoices = req.body;
         const { id } = req.params;
-        console.log('invoicesId', id)
+        // console.log('invoicesId', id)
         const delitem = await Items.destroy({
             where: { invoiceInvoiceId: id }
         })

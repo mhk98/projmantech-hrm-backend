@@ -87,7 +87,7 @@ module.exports.add_employee = async (req, res, file) => {
       role: "user",
     });
 
-    console.log("User", newuser);
+    // console.log("User", newuser);
 
     res.status(200).send({
       status: "Success",

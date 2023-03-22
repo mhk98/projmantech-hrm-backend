@@ -6,7 +6,7 @@ router.post("/", upload, PortService.insertPortService);
 router.delete("/:id", PortService.delete_PortService);
 router.get("/", PortService.getAllPortService);
 router.get("/single/:id", PortService.getOnePortService);
-router.patch("/:id", PortService.updatePortService);
+router.put("/:id", PortService.updatePortService);
 router.get("/:category", PortService.categorywise);
 
 

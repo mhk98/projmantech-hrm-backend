@@ -5,7 +5,7 @@ const { upload } = require('../../../middlewares/upload')
 router.post("/", upload, Slide.insertSlide)
 router.delete("/:id", Slide.delete_Slide)
 router.get("/", Slide.getAllSlide)
-router.patch("/:id", Slide.updateSlide)
+router.put("/:id", Slide.updateSlide)
 
 
 

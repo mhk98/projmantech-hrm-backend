@@ -4,7 +4,7 @@ const Portfolio = require('../../../controllers/projmanClient/Portfolio/Portfoli
 router.post("/", Portfolio.insertPortfolio)
 router.delete("/:id", Portfolio.delete_Portfolio)
 router.get("/", Portfolio.getAllPortfolio)
-router.patch("/:id", Portfolio.updatePortfolio)
+router.put("/:id", Portfolio.updatePortfolio)
 
 
 

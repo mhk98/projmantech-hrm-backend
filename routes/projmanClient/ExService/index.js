@@ -6,7 +6,7 @@ router.post("/", upload, ExService.insertExService)
 router.delete("/:id", ExService.delete_ExService)
 router.get("/", ExService.getAllExService)
 router.get("/single/:id", ExService.getOneExService)
-router.patch("/:id", ExService.updateExService)
+router.put("/:id", ExService.updateExService)
 
 
 

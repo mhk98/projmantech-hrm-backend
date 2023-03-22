@@ -18,7 +18,7 @@ module.exports.insertItems = async (req, res) => {
 
         // const { Item_Name, Discription, unitCost, quantity, amount } = req.body.field[0];
         let { latestEstimatesId } = req.body;
-        console.log('latestEstimatesId', latestEstimatesId)
+        // console.log('latestEstimatesId', latestEstimatesId)
         let data = req.body.field
         // console.log('data', data)
         for (let i = 0; i < data.length; i++) {
@@ -70,7 +70,7 @@ module.exports.insertInvoiceItems = async (req, res) => {
 
         // const { Item_Name, Discription, unitCost, quantity, amount } = req.body.field[0];
         let { latestInvoicesId } = req.body;
-        console.log('latestInvoicesId', latestInvoicesId)
+        // console.log('latestInvoicesId', latestInvoicesId)
 
         let data = req.body.field
 

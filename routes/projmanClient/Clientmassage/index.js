@@ -4,7 +4,7 @@ const Clientmassage = require('../../../controllers/projmanClient/Clientmassage/
 router.post("/", Clientmassage.insertClientmassage)
 router.delete("/:id", Clientmassage.delete_Clientmassage)
 router.get("/", Clientmassage.getAllClientmassage)
-router.patch("/:id", Clientmassage.updateClientmassage)
+router.put("/:id", Clientmassage.updateClientmassage)
 
 
 

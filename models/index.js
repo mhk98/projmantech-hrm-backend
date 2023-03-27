@@ -7,7 +7,7 @@ const { DataTypes } = require("sequelize");
 db.sequelize
   .sync({ force: false })
   .then(() => {
-    // console.log("Connection re-synced");
+    console.log("Connection re-synced");
   })
   .catch((err) => {
     // console.log("Error on re-synced", err);

@@ -560,3 +560,30 @@
 {"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-21T05:09:54.423Z"}
 {"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-21T05:10:23.919Z"}
 {"level":"error","message":"all leave Table 'TEST_MOSTOFA.Leaves' doesn't exist","timestamp":"2023-03-21T05:21:20.138Z"}
+{"level":"error","message":"/api/v1/user/signup findOne is not defined","timestamp":"2023-03-27T06:49:40.485Z"}
+{"level":"error","message":"/api/v1/user/signup findOne is not defined","timestamp":"2023-03-27T06:51:09.140Z"}
+{"level":"error","message":"/api/v1/user/signup findOne is not defined","timestamp":"2023-03-27T06:51:59.305Z"}
+{"level":"error","message":"/api/v1/user/signup notNull Violation: usertbls.User_ID cannot be null","timestamp":"2023-03-27T06:55:48.983Z"}
+{"level":"error","message":"/api/v1/user/signup notNull Violation: usertbls.User_ID cannot be null","timestamp":"2023-03-27T06:55:50.840Z"}
+{"level":"error","message":"/api/v1/user/signup notNull Violation: usertbls.User_ID cannot be null","timestamp":"2023-03-27T06:55:51.866Z"}
+{"level":"error","message":"/api/v1/user/signup Field 'User_ID' doesn't have a default value","timestamp":"2023-03-27T06:57:51.670Z"}
+{"level":"error","message":"/api/v1/user/signup findOne is not defined","timestamp":"2023-03-27T07:45:17.872Z"}
+{"level":"error","message":"/api/v1/user/signup WHERE parameter \"User_ID\" has invalid \"undefined\" value","timestamp":"2023-03-27T07:45:50.582Z"}
+{"level":"error","message":"/api/v1/user/signup WHERE parameter \"User_Id\" has invalid \"undefined\" value","timestamp":"2023-03-27T07:46:30.021Z"}
+{"level":"error","message":"/api/v1/user/signup Validation error","timestamp":"2023-03-27T07:47:46.279Z"}
+{"level":"error","message":"/api/v1/user/signup Validation error","timestamp":"2023-03-27T07:51:02.713Z"}
+{"level":"error","message":"/api/v1/user/signup Cannot read properties of null (reading 'User_Email')","timestamp":"2023-03-27T07:53:50.714Z"}
+{"level":"error","message":"/api/v1/user/signup Cannot read properties of null (reading 'User_Email')","timestamp":"2023-03-27T07:54:21.608Z"}
+{"level":"error","message":"/api/v1/user/signup Cannot read properties of null (reading 'User_Email')","timestamp":"2023-03-27T07:54:36.295Z"}
+{"level":"error","message":"/api/v1/user/signup Cannot read properties of null (reading 'User_Email')","timestamp":"2023-03-27T07:54:52.221Z"}
+{"level":"error","message":"/api/v1/user/signup Cannot read properties of null (reading 'User_Email')","timestamp":"2023-03-27T07:55:23.716Z"}
+{"level":"error","message":"/api/v1/user/signup Validation error","timestamp":"2023-03-27T07:55:34.626Z"}
+{"level":"error","message":"/api/v1/user/signup Cannot read properties of null (reading 'User_Email')","timestamp":"2023-03-27T07:55:41.539Z"}
+{"level":"error","message":"/api/v1/user/signup Cannot read properties of null (reading 'User_Email')","timestamp":"2023-03-27T07:56:03.019Z"}
+{"level":"error","message":"/api/v1/user/signup Validation error","timestamp":"2023-03-27T07:56:12.572Z"}
+{"level":"error","message":"/api/v1/user/signup Cannot read properties of null (reading 'User_Email')","timestamp":"2023-03-27T07:57:59.154Z"}
+{"level":"error","message":"/api/v1/user/signup Cannot read properties of null (reading 'User_Email')","timestamp":"2023-03-27T07:59:45.378Z"}
+{"level":"error","message":"/api/v1/user/signup User_Email is not defined","timestamp":"2023-03-27T08:05:04.052Z"}
+{"level":"error","message":"/api/v1/user/signup User_Email is not defined","timestamp":"2023-03-27T08:05:26.345Z"}
+{"level":"error","message":"/api/v1/user/signup User_Email is not defined","timestamp":"2023-03-27T08:05:45.195Z"}
+{"level":"error","message":"/api/v1/user/signup User_Email is not defined","timestamp":"2023-03-27T08:05:46.643Z"}

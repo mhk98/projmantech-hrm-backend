@@ -618,3 +618,16 @@
 {"level":"error","message":"getAllEmployee connect ETIMEDOUT","timestamp":"2023-03-22T06:08:52.680Z"}
 {"level":"error","message":"/api/v1/profile_information/E-2 connect ETIMEDOUT","timestamp":"2023-03-22T06:08:57.159Z"}
 {"level":"error","message":"getAllEmployee connect ETIMEDOUT","timestamp":"2023-03-22T06:08:57.286Z"}
+{"level":"error","message":"/api/v1/profile_information/null connect ETIMEDOUT","timestamp":"2023-03-23T07:05:11.924Z"}
+{"level":"error","message":"connect ETIMEDOUT","timestamp":"2023-03-23T07:05:16.919Z"}
+{"level":"error","message":"connect ETIMEDOUT","timestamp":"2023-03-23T07:05:21.574Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-23T08:13:24.446Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-23T09:54:18.104Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-23T10:11:34.505Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-23T10:13:42.374Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-23T10:14:33.675Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-23T10:15:00.379Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-23T10:15:40.193Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-23T10:19:52.178Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-23T10:23:13.139Z"}
+{"level":"error","message":"add_employee create Validation error","timestamp":"2023-03-23T10:24:17.571Z"}

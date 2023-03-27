@@ -28,72 +28,91 @@ module.exports.add_employee = async (req, res, file) => {
     } = req.body;
     // console.log("Employee_Id", Employee_Id);
 
-    // Insert employee information in Add_Employee table
-    const result = await Add_Employee.create({
-      Employee_Id,
-      Employee_FirstName,
-      Employee_LastName,
-      Password,
-      Email,
-      Phone,
-      Department,
-      Designation,
-      Company,
-      Joining_Date,
-      Img: req.file.path,
-    });
 
-    // console.log("ImagePathInfo", req.file);
-    // const result = await Add_Employee.create(employee);
-    //Insert Employee_Id in Personal_Information table
-    const personalInfoInsert = await Personal_Information.create({
-      Employee_Id: Employee_Id,
-    });
-    //Insert Employee_Id in Profile_Information table
-    const profileInfoInsert = await Profile_Information.create({
-      Employee_Id: Employee_Id,
-      Employee_FirstName: Employee_FirstName,
-      Employee_LastName: Employee_LastName,
-      Email: Email,
-      Phone: Phone,
-      Department: Department,
-      Designation: Designation,
-      Img: req.file.path,
-    });
+    const employeeCheck = await Add_Employee.findOne({
+      where: {
+        Email: Email
+      }
+    })
 
-    //Insert Employee_Id in Employee_BankInfo table
-    const employeeBankInfoInsert = await Employee_BankInfo.create({
-      Employee_Id: Employee_Id,
-    });
 
-    //Insert Employee_Id in Education_Information table
-    const educationInfoInsert = await Education_Information.create({
-      addEmployeeEmployeeId: Employee_Id,
-    });
+    if (employeeCheck) {
+      return res.status(403).send({
+        status: "Fail",
+        message: "Employee already exist",
+      })
+    } else {
+      // Insert employee information in Add_Employee table
+      const result = await Add_Employee.create({
+        Employee_Id,
+        Employee_FirstName,
+        Employee_LastName,
+        Password,
+        Email,
+        Phone,
+        Department,
+        Designation,
+        Company,
+        Joining_Date,
+        Img: req.file.path,
+      });
 
-    //Insert Employee_Id in Emergency_Contact table
-    const emergencyContactInsert = await Emergency_Contact.create({
-      addEmployeeEmployeeId: Employee_Id,
-    });
-    // const attendanceInsert = await Attendance.create({
-    //   addEmployeeEmployeeId: Employee_Id,
-    // });
+      // console.log("ImagePathInfo", req.file);
+      // const result = await Add_Employee.create(employee);
+      //Insert Employee_Id in Personal_Information table
+      const personalInfoInsert = await Personal_Information.create({
+        Employee_Id: Employee_Id,
+      });
+      //Insert Employee_Id in Profile_Information table
+      const profileInfoInsert = await Profile_Information.create({
+        Employee_Id: Employee_Id,
+        Employee_FirstName: Employee_FirstName,
+        Employee_LastName: Employee_LastName,
+        Email: Email,
+        Phone: Phone,
+        Department: Department,
+        Designation: Designation,
+        Img: req.file.path,
+      });
 
-    const newuser = await User.create({
-      User_ID: Employee_Id,
-      User_Name: Employee_FirstName,
-      pass_word: Password,
-      User_Email: Email,
-      role: "user",
-    });
+      //Insert Employee_Id in Employee_BankInfo table
+      const employeeBankInfoInsert = await Employee_BankInfo.create({
+        Employee_Id: Employee_Id,
+      });
 
-    // console.log("User", newuser);
+      //Insert Employee_Id in Education_Information table
+      const educationInfoInsert = await Education_Information.create({
+        addEmployeeEmployeeId: Employee_Id,
+      });
 
-    res.status(200).send({
-      status: "Success",
-      message: "You successfully added employee information",
-      data: result,
-    });
+      //Insert Employee_Id in Emergency_Contact table
+      const emergencyContactInsert = await Emergency_Contact.create({
+        addEmployeeEmployeeId: Employee_Id,
+      });
+      // const attendanceInsert = await Attendance.create({
+      //   addEmployeeEmployeeId: Employee_Id,
+      // });
+
+
+
+
+      const newuser = await User.create({
+        User_ID: Employee_Id,
+        User_Name: Employee_FirstName,
+        pass_word: Password,
+        User_Email: Email,
+        role: "user",
+      });
+
+      // console.log("User", newuser);
+
+      res.status(200).send({
+        status: "Success",
+        message: "You successfully added employee information",
+        data: result,
+      });
+    }
+
   } catch (error) {
     res.status(400).send({
       status: "fail",

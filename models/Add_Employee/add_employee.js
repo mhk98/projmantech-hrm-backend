@@ -44,6 +44,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      Status: {
+        type: DataTypes.STRING,
+        defaultValue: "Active",
+      },
       Img: {
         type: DataTypes.STRING,
         allowNull: false,

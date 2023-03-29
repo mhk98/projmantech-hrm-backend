@@ -217,12 +217,13 @@ module.exports.deleteEmployeeInformation = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const deleteUser = await User.destroy({
+    const result = await User.destroy({
       where: { User_ID: id },
     });
-    const result = await Add_Employee.destroy({
-      where: { Employee_Id: id },
-    });
+    const employeestatus = await Add_Employee.update(
+      { Status: 'Deactivated' },
+      { where: { Employee_Id: id } }
+    );
 
     res.status(200).send({
       status: "Success",

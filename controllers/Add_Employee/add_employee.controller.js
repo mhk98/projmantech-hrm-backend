@@ -28,19 +28,18 @@ module.exports.add_employee = async (req, res, file) => {
     } = req.body;
     // console.log("Employee_Id", Employee_Id);
 
-
     const employeeCheck = await Add_Employee.findOne({
       where: {
-        Email: Email
-      }
-    })
-
+        Employee_Id: Employee_Id,
+        Email: Email,
+      },
+    });
 
     if (employeeCheck) {
       return res.status(403).send({
         status: "Fail",
-        message: "Employee already exist",
-      })
+        message: "user already exist",
+      });
     } else {
       // Insert employee information in Add_Employee table
       const result = await Add_Employee.create({
@@ -93,9 +92,6 @@ module.exports.add_employee = async (req, res, file) => {
       //   addEmployeeEmployeeId: Employee_Id,
       // });
 
-
-
-
       const newuser = await User.create({
         User_ID: Employee_Id,
         User_Name: Employee_FirstName,
@@ -112,7 +108,6 @@ module.exports.add_employee = async (req, res, file) => {
         data: result,
       });
     }
-
   } catch (error) {
     res.status(400).send({
       status: "fail",
@@ -221,7 +216,7 @@ module.exports.deleteEmployeeInformation = async (req, res) => {
       where: { User_ID: id },
     });
     const employeestatus = await Add_Employee.update(
-      { Status: 'Deactivated' },
+      { Status: "Deactivated" },
       { where: { Employee_Id: id } }
     );
 
